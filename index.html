@@ -1,0 +1,700 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Noel ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #09060b;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Ambient background */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 72, 132, .16), transparent 30%),
+        radial-gradient(circle at 80% 80%, rgba(145, 70, 255, .14), transparent 30%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Intro */
+.intro {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+    position: relative;
+}
+
+.intro-content {
+    max-width: 700px;
+    animation: fadeUp 1.5s ease;
+}
+
+.small {
+    font-size: 12px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: .6;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(60px, 12vw, 130px);
+    font-weight: 500;
+    line-height: .85;
+    margin-bottom: 30px;
+}
+
+.intro p {
+    font-size: 16px;
+    line-height: 1.8;
+    opacity: .75;
+    max-width: 520px;
+    margin: auto;
+}
+
+.open-btn {
+    margin-top: 40px;
+    padding: 16px 35px;
+    border: 1px solid rgba(255,255,255,.35);
+    background: rgba(255,255,255,.05);
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: .4s;
+}
+
+.open-btn:hover {
+    background: white;
+    color: #09060b;
+    transform: translateY(-4px);
+}
+
+/* Sections */
+section {
+    min-height: 100vh;
+    padding: 100px 7%;
+    display: flex;
+    align-items: center;
+}
+
+.section-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.number {
+    font-size: 12px;
+    letter-spacing: 4px;
+    opacity: .4;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(50px, 8vw, 100px);
+    font-weight: 500;
+    line-height: .95;
+    margin-bottom: 30px;
+}
+
+.text {
+    max-width: 650px;
+    font-size: 17px;
+    line-height: 2;
+    opacity: .78;
+}
+
+/* Photo sections */
+.photo-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.photo-frame {
+    height: 650px;
+    overflow: hidden;
+    border-radius: 3px;
+    position: relative;
+    background: #17121a;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s ease;
+}
+
+.photo-frame:hover img {
+    transform: scale(1.06);
+}
+
+/* Quote */
+.quote {
+    min-height: 80vh;
+    text-align: center;
+    justify-content: center;
+}
+
+.quote-inner {
+    max-width: 850px;
+}
+
+.quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 7vw, 85px);
+    line-height: 1.05;
+}
+
+/* Memory grid */
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.memory {
+    height: 420px;
+    overflow: hidden;
+}
+
+.memory:nth-child(2) {
+    margin-top: 70px;
+}
+
+.memory:nth-child(3) {
+    margin-top: 30px;
+}
+
+.memory img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .8s;
+}
+
+.memory:hover img {
+    transform: scale(1.05);
+}
+
+/* Things */
+.things {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.thing {
+    border-top: 1px solid rgba(255,255,255,.15);
+    padding: 25px 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+}
+
+/* Final letter */
+.final {
+    text-align: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.letter {
+    max-width: 750px;
+}
+
+.letter p {
+    font-size: 18px;
+    line-height: 2;
+    opacity: .78;
+    margin-bottom: 25px;
+}
+
+.signature {
+    margin-top: 50px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 45px;
+}
+
+/* Hearts */
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 15px;
+    opacity: .35;
+    animation: float 8s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: .5;
+    }
+    80% {
+        opacity: .3;
+    }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile */
+@media(max-width: 800px) {
+
+    section {
+        padding: 80px 7%;
+    }
+
+    .photo-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .photo-frame {
+        height: 500px;
+    }
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .memory,
+    .memory:nth-child(2),
+    .memory:nth-child(3) {
+        margin-top: 0;
+        height: 500px;
+    }
+
+    .things {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<section class="intro" id="start">
+    <div class="intro-content">
+
+        <div class="small">A little something for you</div>
+
+        <h1>Noel.</h1>
+
+        <p>
+            I could've just sent you a paragraph...
+            but you're way too important for that.
+        </p>
+
+        <button class="open-btn"
+        onclick="document.getElementById('story').scrollIntoView()">
+            Open this ❤️
+        </button>
+
+    </div>
+</section>
+
+
+<!-- SECTION 1 -->
+<section id="story">
+    <div class="section-inner photo-section">
+
+        <div>
+            <div class="number">01 — YOU</div>
+
+            <div class="title">
+                Do you know<br>
+                what you mean<br>
+                to me?
+            </div>
+
+            <p class="text">
+                Sometimes I don't think I properly explain it.
+                You aren't just someone I talk to.
+                You aren't just my girlfriend.
+                You became one of those people whose presence
+                genuinely changes how life feels.
+                <br><br>
+                Somehow, with you, things feel lighter.
+                There is this peace I can't really put into words.
+                And honestly, I'm grateful that I get to know you,
+                love you, annoy you, laugh with you and make memories
+                with you.
+            </p>
+        </div>
+
+        <div class="photo-frame">
+            <img src="n1.jpg" alt="Noel">
+        </div>
+
+    </div>
+</section>
+
+
+<!-- SECTION 2 -->
+<section class="quote">
+
+    <div class="quote-inner">
+
+        <div class="number">02 — SOMETHING I NEED YOU TO KNOW</div>
+
+        <div class="quote-text">
+            You don't have to have everything figured out
+            for me to love you.
+        </div>
+
+        <p class="text" style="margin:40px auto 0;">
+            You are allowed to have difficult days.
+            You're allowed to feel overwhelmed.
+            You're allowed to not know what you're feeling.
+            You don't have to put on a perfect version of yourself
+            for me.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SECTION 3 -->
+<section>
+
+    <div class="section-inner photo-section">
+
+        <div class="photo-frame">
+            <img src="n2.jpg" alt="Noel">
+        </div>
+
+        <div>
+
+            <div class="number">03 — PLEASE REMEMBER</div>
+
+            <div class="title">
+                You don't<br>
+                have to go<br>
+                through it alone.
+            </div>
+
+            <p class="text">
+                I know I can't magically fix everything you're going
+                through. I wish I could sometimes.
+                <br><br>
+                But I can listen.
+                I can sit with you.
+                I can remind you that you're loved.
+                I can hold space for you when things feel messy.
+                <br><br>
+                And if you ever need professional help,
+                I will support you getting that too.
+                You deserve people around you who care about
+                your healing and your peace.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SECTION 4 -->
+<section>
+
+    <div class="section-inner">
+
+        <div class="number">04 — THE LITTLE THINGS</div>
+
+        <div class="title">
+            Things I hope<br>
+            you never forget.
+        </div>
+
+        <div class="things">
+
+            <div class="thing">
+                You are important to me.
+            </div>
+
+            <div class="thing">
+                Your existence matters.
+            </div>
+
+            <div class="thing">
+                You don't have to earn my love.
+            </div>
+
+            <div class="thing">
+                You can be vulnerable with me.
+            </div>
+
+            <div class="thing">
+                Your bad days don't make you difficult.
+            </div>
+
+            <div class="thing">
+                I want to see you happy.
+            </div>
+
+            <div class="thing">
+                I want to see you heal.
+            </div>
+
+            <div class="thing">
+                I am grateful for you.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MEMORIES -->
+<section>
+
+    <div class="section-inner">
+
+        <div class="number">05 — YOU & ME</div>
+
+        <div class="title">
+            My favourite<br>
+            kind of memory?
+        </div>
+
+        <p class="text">
+            The ones where we aren't trying to make anything perfect.
+            Just us being us.
+            Laughing. Talking. Existing next to each other.
+            Those ordinary moments somehow become my favourites.
+        </p>
+
+        <div class="memory-grid">
+
+            <div class="memory">
+                <img src="n2.jpg" alt="Memory">
+            </div>
+
+            <div class="memory">
+                <img src="n1.jpg" alt="Memory">
+            </div>
+
+            <div class="memory">
+                <img src="n2.jpg" alt="Memory">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BIG MESSAGE -->
+<section class="quote">
+
+    <div class="quote-inner">
+
+        <div class="number">06 — FROM ME TO YOU</div>
+
+        <div class="quote-text">
+            Out of all the people in the world,
+            somehow I get to call you mine.
+        </div>
+
+        <p class="text" style="margin:40px auto;">
+            And I don't take that lightly.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PHOTO + MESSAGE -->
+<section>
+
+    <div class="section-inner photo-section">
+
+        <div>
+
+            <div class="number">07 — MY GIRL</div>
+
+            <div class="title">
+                You are<br>
+                a GEM.
+            </div>
+
+            <p class="text">
+                I want you to know that I see you.
+                Not just the version everyone else sees.
+                I see the girl who laughs, the girl who overthinks,
+                the girl who gets emotional, the girl who needs
+                reassurance, the girl who is still figuring things out.
+                <br><br>
+                And I don't need you to become somebody else
+                before you deserve love.
+                <br><br>
+                I love the person you are.
+                And I'm excited about the person you're becoming.
+            </p>
+
+        </div>
+
+        <div class="photo-frame">
+            <img src="n1.jpg" alt="Noel">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL LETTER -->
+<section class="final">
+
+    <div class="letter">
+
+        <div class="number">08 — ONE LAST THING</div>
+
+        <div class="title">
+            Noel,
+        </div>
+
+        <p>
+            If you ever have one of those days where you forget
+            how loved you are, come back here.
+        </p>
+
+        <p>
+            Read this again.
+        </p>
+
+        <p>
+            Because somewhere in this world there is a girl
+            who thinks you're incredibly special.
+            A girl who wants to see you smile.
+            A girl who wants to make memories with you.
+            A girl who wants you to know that you matter.
+        </p>
+
+        <p>
+            I don't know what every chapter of our story will look like,
+            but I know that I'm grateful for the chapter where
+            I met you.
+        </p>
+
+        <p>
+            Thank you for being you.
+            Thank you for letting me love you.
+            And thank you for being part of my life.
+        </p>
+
+        <div class="signature">
+            I love you, Noel. ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* Floating hearts */
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML = "♡";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration =
+        (5 + Math.random() * 7) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 12000);
+}
+
+setInterval(createHeart, 900);
+
+
+/* Reveal animations */
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(
+    entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.style.animation =
+                    "fadeUp 1s ease forwards";
+
+            }
+
+        });
+
+    },
+    { threshold: 0.15 }
+);
+
+sections.forEach(section => observer.observe(section));
+
+</script>
+
+</body>
+</html>
+```
